@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { fireDb, storage } from "../../../firebase/FirebaseConfig";
 import MyContext from "../../../context/data/MyContext";
 import { toast } from "react-toastify";
 import Loader from "../../../components/loader/Loader";
+import { fireDb, storage } from "../../../firebase/FirebaseConfig";
 function CreateBlog() {
   const context = useContext(MyContext);
   const { mode, loading, setloading } = context;
