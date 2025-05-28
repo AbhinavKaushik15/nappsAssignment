@@ -12,10 +12,10 @@ import {
 } from "firebase/firestore";
 import Loader from "../../components/loader/Loader";
 import Layout from "../../components/layout/Layout";
-import Comment from "../../components/comment/Comment";
 import MyContext from "../../context/data/MyContext";
 import { toast } from "react-toastify";
 import { fireDb } from "../../firebase/FirebaseConfig";
+import Comment from "../../components/comment/Comment";
 
 function BlogInfo() {
   const context = useContext(MyContext);
