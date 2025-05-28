@@ -3,12 +3,12 @@ import { Editor } from "@tinymce/tinymce-react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import { Timestamp, addDoc, collection } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import MyContext from "../../../context/data/MyContext";
 import { toast } from "react-toastify";
 import Loader from "../../../components/loader/Loader";
 import { fireDb, storage } from "../../../firebase/FirebaseConfig";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { collection, Timestamp, addDoc } from "firebase/firestore";
 function CreateBlog() {
   const context = useContext(MyContext);
   const { mode, loading, setloading } = context;
@@ -212,6 +212,36 @@ function CreateBlog() {
                 "emoticons",
                 "exportpdf",
                 "footnotes",
+                "formatpainter",
+                "fullscreen",
+                "help",
+                "image",
+                "importcss",
+                "inlinecss",
+                "insertdatetime",
+                "link",
+                "linkchecker",
+                "lists",
+                "media",
+                "mediaembed",
+                "mentions",
+                "nonbreaking",
+                "pagebreak",
+                "pageembed",
+                "permanentpen",
+                "powerpaste",
+                "preview",
+                "quickbars",
+                "save",
+                "searchreplace",
+                "table",
+                "tableofcontents",
+                "tinydrive",
+                "tinymcespellchecker",
+                "typography",
+                "visualblocks",
+                "visualchars",
+                "wordcount",
               ],
               toolbar:
                 "undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist checklist | outdent indent | link image media | code preview exportpdf | fullscreen",
