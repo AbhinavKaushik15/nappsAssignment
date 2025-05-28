@@ -4,52 +4,47 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { Suspense, lazy } from "react";
 import MyState from "./context/data/MyState";
-
-// Lazy-loaded pages
-const Dashboard = lazy(() => import("./pages/admin/dashboard/DashBoard"));
-const UserLogin = lazy(() => import("./pages/admin/userLogin/UserLogin"));
-const Signup = lazy(() => import("./pages/admin/userLogin/Signup"));
-const BlogInfo = lazy(() => import("./pages/BlogInfo/BlogInfo"));
-const AllBlogs = lazy(() => import("./pages/allBlogs/AllBlogs"));
-const NoPage = lazy(() => import("./pages/Nopage/NoPage"));
-const CreateBlog = lazy(() => import("./pages/admin/createBlog/CreateBlog"));
-const Blog = lazy(() => import("./pages/blog/Blog"));
-const Home = lazy(() => import("./pages/home/Home"));
+import Home from "./pages/home/Home";
+import Blog from "./pages/blog/Blog";
+import AllBlogs from "./pages/allBlogs/AllBlogs";
+import BlogInfo from "./pages/BlogInfo/BlogInfo";
+import UserLogin from "./pages/admin/userLogin/UserLogin";
+import Signup from "./pages/admin/userLogin/Signup";
+import Dashboard from "./pages/admin/dashboard/DashBoard";
+import CreateBlog from "./pages/admin/createBlog/CreateBlog";
+import NoPage from "./pages/Nopage/NoPage";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <MyState>
       <Router>
-        <Suspense fallback={<div className="text-center p-8">Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/allblogs" element={<AllBlogs />} />
-            <Route path="/bloginfo/:id" element={<BlogInfo />} />
-            <Route path="/userlogin" element={<UserLogin />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route
-              path="/dashboard"
-              element={
-                <UserProtectedRoute>
-                  <Dashboard />
-                </UserProtectedRoute>
-              }
-            />
-            <Route
-              path="/createblog"
-              element={
-                <UserProtectedRoute>
-                  <CreateBlog />
-                </UserProtectedRoute>
-              }
-            />
-            <Route path="/*" element={<NoPage />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/allblogs" element={<AllBlogs />} />
+          <Route path="/bloginfo/:id" element={<BlogInfo />} />
+          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/dashboard"
+            element={
+              <UserProtectedRoute>
+                <Dashboard />
+              </UserProtectedRoute>
+            }
+          />
+          <Route
+            path="/createblog"
+            element={
+              <UserProtectedRoute>
+                <CreateBlog />
+              </UserProtectedRoute>
+            }
+          />
+          <Route path="/*" element={<NoPage />} />
+        </Routes>
         <ToastContainer />
       </Router>
     </MyState>
