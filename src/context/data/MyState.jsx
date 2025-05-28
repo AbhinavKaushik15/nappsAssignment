@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import MyContext from "./MyContext";
+import { fireDb } from "../../firebase/FirebaseConfig";
 import {
   collection,
   deleteDoc,
@@ -7,9 +10,6 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
-import { toast } from "react-toastify";
-import MyContext from "./MyContext";
-import { fireDb } from "../../firebase/FirebaseConfig";
 
 function MyState(props) {
   const [mode, setMode] = useState("light"); // Whether dark mode is enabled or not
