@@ -54,7 +54,7 @@ const UserLogin = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="flex items-center justify-between flex-wrap"> 
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-white mt-4">
               Don't have an account?
               <Link
