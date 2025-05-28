@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import MyContext from "../../../context/data/MyContext";
 import Loader from "../../../components/loader/Loader";
 import { toast } from "react-toastify";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, fireDb } from "../../../firebase/FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
   const [name, setName] = useState("");
